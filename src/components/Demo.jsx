@@ -14,8 +14,14 @@ const Demo = () => {
 
   const [copied, setCopied] = useState('');
 
-
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
+
+  //const [deletePost, response] = useDeletePostMutation();
+
+  //const removeElement = () => {
+   // deletePost((response) => '')
+ // }
+
 
   useEffect(() => {
     const articlesFromLocalStorage = JSON.parse(
@@ -61,6 +67,7 @@ const Demo = () => {
       handleSubmit(e);
     }
   }
+
 
   return (
     <section className='mt-16 w-full max-w-xl'>
@@ -111,6 +118,15 @@ const Demo = () => {
               <p className='flex-1 font-satoshi text-blue-700 font-medium text-sm truncate'>
                 {item.url}
               </p>
+              {/*
+              <div className='black_btn w-[10%] h-[10%]'>
+                <img
+                  src={remove}
+                  alt='delete'
+                  onClick={() => removeElement(item.url)} 
+                  className='object-contain'
+                />
+          </div> */}
             </div>
           ))}
         </div>

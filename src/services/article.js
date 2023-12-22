@@ -17,7 +17,11 @@ export const articleApi = createApi({
         getSummary: builder.query({
             query: (params) => `/summarize?url=${encodeURIComponent(params.articleUrl)}&length=3`,
         }),
+        //deletePost: builder.mutation({
+            //query: (params) => `${encodeURIComponent(params.articleUrl)}`,
+            //method: 'DELETE',
+       // }),
     }),
 });
 
-export const { useLazyGetSummaryQuery } = articleApi;
+export const { useLazyGetSummaryQuery, useDeletePostMutation } = articleApi;
