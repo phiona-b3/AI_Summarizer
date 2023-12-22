@@ -69,6 +69,7 @@ const Demo = () => {
   }
 
 
+
   return (
     <section className='mt-16 w-full max-w-xl'>
       {/* Search */}
@@ -118,15 +119,15 @@ const Demo = () => {
               <p className='flex-1 font-satoshi text-blue-700 font-medium text-sm truncate'>
                 {item.url}
               </p>
-              {/*
-              <div className='black_btn w-[10%] h-[10%]'>
+             {/* <div className='black_btn w-[10%] h-[10%]'>
                 <img
                   src={remove}
+                  key={`link-${index}`}
                   alt='delete'
-                  onClick={() => removeElement(item.url)} 
+                  onClick={() => deletePost(item.url)} 
                   className='object-contain'
                 />
-          </div> */}
+          </div>*/}
             </div>
           ))}
         </div>
@@ -158,6 +159,7 @@ const Demo = () => {
         )}
       </div>
     </section>
+    
   )
 }
 

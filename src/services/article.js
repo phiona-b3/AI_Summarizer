@@ -17,9 +17,13 @@ export const articleApi = createApi({
         getSummary: builder.query({
             query: (params) => `/summarize?url=${encodeURIComponent(params.articleUrl)}&length=3`,
         }),
-        //deletePost: builder.mutation({
-            //query: (params) => `${encodeURIComponent(params.articleUrl)}`,
-            //method: 'DELETE',
+       // deletePost: builder.mutation({
+           // query(index) {
+               // return {
+                   // url: `link-${index}`,
+                    //method: 'DELETE',
+              //  }
+           // } 
        // }),
     }),
 });
