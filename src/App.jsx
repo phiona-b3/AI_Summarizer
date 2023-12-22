@@ -1,5 +1,7 @@
+/*eslint-disable*/
 import Hero from './components/Hero';
 import Demo from './components/Demo';
+import StarsCanvas from './components/Stars';
 
 import './App.css';
 
@@ -13,6 +15,7 @@ const App = () => {
         <div className='app'>
             <Hero />
             <Demo />
+            <StarsCanvas />
         </div>
     </main>
   )

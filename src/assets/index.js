@@ -4,6 +4,7 @@ import copy from './copy.svg'
 import logo from './logo.svg'
 import tick from './tick.svg'
 import logo_1 from './logo_1.png'
+import remove from './delete.png'
 
 export {
     linkIcon,
@@ -11,5 +12,6 @@ export {
     copy,
     logo,
     logo_1,
-    tick
+    tick,
+    remove
 }

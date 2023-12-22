@@ -14,12 +14,13 @@ const Demo = () => {
 
   const [copied, setCopied] = useState('');
 
+
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 
   useEffect(() => {
     const articlesFromLocalStorage = JSON.parse(
       localStorage.getItem('articles')
-    )
+    );
 
     if (articlesFromLocalStorage) {
       setAllArticles(articlesFromLocalStorage)
@@ -28,6 +29,12 @@ const Demo = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const existingArticle = allArticles.find(
+      (item) => item.url === article.url
+    );
+
+    if (existingArticle) return setArticle(existingArticle);
 
     const { data } = await getSummary({ articleUrl: article.url });
 
@@ -47,6 +54,12 @@ const Demo = () => {
     setCopied(copyUrl);
     navigator.clipboard.writeText(copyUrl);
     setTimeout(() => setCopied(false), 3000);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      handleSubmit(e);
+    }
   }
 
   return (
@@ -67,13 +80,14 @@ const Demo = () => {
             placeholder='Enter a URL'
             value={article.url}
             onChange={(e) => setArticle({ ...article, url: e.target.value})}
+            onKeyDown={handleKeyDown}
             required
             className='url_input peer'
           />
 
           <button
             type='submit'
-            className='submit_btn peer-focus:border-orange-700 peer-focus:text-orange-700'
+            className='submit_btn peer-focus:border-orange-700 peer-focus:text-black-700'
           >
             <p>Submit</p>
           </button>
@@ -81,7 +95,7 @@ const Demo = () => {
 
         {/* Browser URL History*/}
         <div className='flex flex-col gap-1 max-h-60 overflow-y-auto'>
-          {allArticles.map((item, index) => (
+          {allArticles.reverse().map((item, index) => (
             <div
               key={`link-${index}`}
               onClick={() => setArticle(item)}

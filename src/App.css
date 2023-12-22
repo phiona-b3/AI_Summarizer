@@ -17,7 +17,7 @@
 }
 
 .main:before {
-  background: #000000; /* fallback for old browsers */
+  background: rgb(19, 3, 19); /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
    /* #434343,*/
@@ -102,11 +102,11 @@
 }
 
 .url_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-10 pr-12 text-sm shadow-lg font-satoshi font-medium focus:border-black focus:outline-none focus:ring-0 text-black;
+  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-10 pr-12 text-sm shadow-lg font-satoshi font-medium focus:border-black focus:outline-none focus:ring-0 text-black ;
 }
 
 .submit_btn {
-  @apply hover:border-gray-700 hover:text-gray-700 absolute inset-y-0 right-0 my-1.5 mr-1.5 flex w-12 items-center justify-center rounded border border-gray-200 font-sans text-sm font-medium text-gray-400;
+  @apply hover:border-gray-700 absolute inset-y-0 right-0 my-1.5 mr-1.5 flex w-12 items-center justify-center rounded border border-blue-700 font-sans text-sm font-medium text-gray-800 z-0  hover:bg-orange-900 hover:text-black;
 }
 
 .link_card {
